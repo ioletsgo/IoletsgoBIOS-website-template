@@ -1,3 +1,3 @@
 # IoletsgoBIOS Website Template
  A basic HTML/CSS Website template heavily inspired off of PhoenixBIOS interfaces.
-![image](https://github.com/ioletsgo/IoletsgoBIOS-website-template/assets/36903453/a3853e76-e235-40a8-95d1-582ee98020b6)
+![image](https://github.com/ioletsgo/IoletsgoBIOS-website-template/assets/36903453/b9f65646-0fc8-451c-b407-746265b7a853)
