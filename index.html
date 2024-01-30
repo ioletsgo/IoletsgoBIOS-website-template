@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    @import "CSS/style.css";
+    </style>
+  </head>
+  <body>
+    <header>
+    <div style="width:100%;background-color:DarkCyan;height:20px;padding-top:5px;color:black;"><center>IoletsgoBIOS Setup Utility</center></div>
+    <div style="width:100%;background-color:Darkblue;height:20px;color:gray;padding-top:5px">
+    <input id="main" type="radio" name="bios_select" checked onclick="Main()"><span><label for="main">Main</label></span></input>
+    <input id="advanced" type="radio" name="bios_select"><span><label for="advanced" onclick="Advanced()">Advanced</label></span></input>
+    <input id="security" type="radio" name="bios_select"><span><label for=security onclick="Security()">Security</label></span></input>
+    <input id="boot" type="radio" name="bios_select"><span><label for="boot" onclick="Boot()">Boot</label></span></input>
+    <input id="exit" type="radio" name="bios_select"><span><label for="exit" onclick="Exit()">Exit</label></span></input>
+    </div>
+    </header>
+    <main>
+    <div id="Main" class="main">
+    <div class="side">
+    <pre>
+BIOS Version
+Processor Type
+Processor Speed
+Cycle RAM
+Service Tag
+
+System Memory
+Memory Bank 0
+Memory Bank 1
+Memory Bank 2
+
+
+Processor Serial Number:
+L2 Cache ECC Support
+
+System Time:
+System Date:
+</pre>
+</div>
+<pre>
+ETZI7qsnot V1.1
+Pentium (R) III
+500 MHz
+512 KB
+6891641480545528309055
+
+128 MB
+128 MB SDRAM
+Not Installed
+Not Installed
+
+
+<span>[Disabled]</span>
+<span>[Auto]</span>
+
+<date id="date"></date>
+<date id="time"></date>
+</pre>
+</div>
+    <div id="Advanced" class="main" style="display:none;">
+<pre>
+<center style="color:white;">Setup Warning</center>
+<center>Setting items in this menu to incorrect values
+may cause your system to malfunction.</center>
+    <div class="side">
+    <pre>
+    Plug & Play O/S:
+    Reset Configuration Data:
+
+    Numlock:
+
+
+   ▶ Peripheral Configuration
+   ▶ IDE Configuration
+   ▶ Diskette Configuration
+   ▶ DMI Event Logging
+   ▶ Video Configuration
+   ▶ Resource Configuration
+</pre>
+</div>
+<span>[Yes]</span>
+<span>[No]</span>
+
+<span>[Auto]</span>
+</pre>
+</div>
+<div class="side">
+<p><center>Item Specific Help</center></p>
+<hr>
+<p style="padding:5%;padding-top:1%">
+This is <b>not</b> a functioning BIOS, this is built from the ground up only utilizing basic HTML, CSS, and Javascript.<br><br>
+
+If you are interested in using contributing to this, or using it as a template for a personal website, please
+</p>
+</div>
+    </main>
+    <footer>
+    <div id="footer">
+    <pre>
+  <span>F1</span>    Help  <span>↑↓</span>   Select Item      <span>-/+</span>    Change Values      <span>F9</span>   Setup Defaults
+
+<span>ESC</span>    Exit  <span>←→</span>   Select Menu    <span>Enter</span>   Select ▶ Sub-Menu   <span>F10</span>   Save And Exit
+    </pre>
+    </div>
+    </footer>
+  </body>
+
+  <script>
+function Main() {
+document.getElementById("Main").style.display = "block";
+document.getElementById("Advanced").style.display = "none";
+document.getElementById("Security").style.display = "none";
+document.getElementById("Boot").style.display = "none";
+document.getElementById("Exit").style.display = "none";
+}
+function Advanced() {
+document.getElementById("Main").style.display = "none";
+document.getElementById("Advanced").style.display = "block";
+document.getElementById("Security").style.display = "none";
+document.getElementById("Boot").style.display = "none";
+document.getElementById("Exit").style.display = "none";
+}
+function Security() {
+document.getElementById("Main").style.display = "none";
+document.getElementById("Advanced").style.display = "none";
+document.getElementById("Security").style.display = "block";
+document.getElementById("Boot").style.display = "none";
+document.getElementById("Exit").style.display = "none";
+}
+function Boot() {
+document.getElementById("Main").style.display = "none";
+document.getElementById("Advanced").style.display = "none";
+document.getElementById("Security").style.display = "none";
+document.getElementById("Boot").style.display = "block";
+document.getElementById("Exit").style.display = "none";
+}
+function Exit() {
+document.getElementById("Main").style.display = "none";
+document.getElementById("Advanced").style.display = "none";
+document.getElementById("Security").style.display = "none";
+document.getElementById("Boot").style.display = "none";
+document.getElementById("Exit").style.display = "block";
+}
+var date = new Date();
+var n = date.toDateString();
+var time = date.toLocaleTimeString();
+document.getElementById('date').innerHTML = n;
+document.getElementById('time').innerHTML = time;
+  </script>
+</html>
