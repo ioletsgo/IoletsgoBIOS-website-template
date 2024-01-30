@@ -28,6 +28,9 @@ hr {
     border-color:black;
     border-style:solid;
 }
+a {
+    color:blue;
+}
 .main {
     float:left;
     border-style:solid;
