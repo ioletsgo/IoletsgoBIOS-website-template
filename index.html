@@ -2,7 +2,7 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>IoletsgoBIOS Setup Utility</title>
     <style>
     @import "CSS/style.css";
     </style>
@@ -19,7 +19,9 @@
     </div>
     </header>
     <main>
-    <div id="Main" class="main">
+
+<!--     Main section -->
+  <div id="Main" class="main">
     <div class="side">
     <pre>
 BIOS Version
@@ -60,34 +62,45 @@ Not Installed
 <date id="date"></date>
 <date id="time"></date>
 </pre>
-</div>
-    <div id="Advanced" class="main" style="display:none;">
+  </div>
+<!--     Advanced Section -->
+  <div id="Advanced" class="main" style="display:none;">
 <pre>
 <center style="color:white;">Setup Warning</center>
 <center>Setting items in this menu to incorrect values
 may cause your system to malfunction.</center>
-    <div class="side">
-    <pre>
-    Plug & Play O/S:
-    Reset Configuration Data:
-
-    Numlock:
-
-
+<table>
+<tr>
+  <td style="padding-left:8%;">Plug & Play O/S:</td>
+  <td><span>[Yes]</span></td>
+</tr>
+<tr>
+  <td style="padding-left:8%;">Reset Configuration Data</td>
+  <td><span>[No]</span></td>
+</tr>
+<tr>
+  <td> </td>
+</tr>
+  <td style="padding-left:8%;">Numlock:</td>
+  <td><span>[Auto]</span></td>
+</table>
+  <pre>
    ▶ Peripheral Configuration
    ▶ IDE Configuration
    ▶ Diskette Configuration
    ▶ DMI Event Logging
    ▶ Video Configuration
-   ▶ Resource Configuration
-</pre>
-</div>
-<span>[Yes]</span>
-<span>[No]</span>
-
-<span>[Auto]</span>
-</pre>
-</div>
+   ▶ Resource Configuration </pre>
+    </div>
+<!--     Security Section   -->
+  <div id="Security" class="main" style="display:none;">
+    </div>
+<!--     Boot Section -->
+  <div id="Boot" class="main" style="display:none;">
+    </div>
+<!--     Exit Section -->
+  <div id="Exit" class="main" style="display:none;">
+    </div>
 <div class="side">
 <p><center>Item Specific Help</center></p>
 <hr>
@@ -102,10 +115,30 @@ If you are interested in using contributing to this, or using it as a template f
     </main>
     <footer>
     <div id="footer">
-    <pre>
-  <span>F1</span>    Help  <span>↑↓</span>   Select Item      <span>-/+</span>    Change Values      <span>F9</span>   Setup Defaults
-
-<span>ESC</span>    Exit  <span>←→</span>   Select Menu    <span>Enter</span>   Select ▶ Sub-Menu   <span>F10</span>   Save And Exit
+    <div style="width:75%;margin:auto;"> <!--dear lord i apologize for the webdev scuff that's this nested div 😭-->
+    <table>
+      <tr>
+        <td><span>F1</span></td>
+        <td >Help</td>
+        <td><span>↑↓</span></td>
+        <td>Select Item</td>
+        <td><span>-/+</span></td>
+        <td>Change Values</td>
+        <td><span>F9</span></td>
+        <td>Setup Defaults</td>
+      </tr>
+      <tr>
+        <td><span>ESC</span></td>
+        <td>Exit</td>
+        <td><span>←→</span></td>
+        <td>Select Menu</td>
+        <td><span>Enter</span></td>
+        <td>Select ▶ Sub-Menu</td>
+        <td><span>F10</span></td>
+        <td>Save And Exit</td>
+      </tr>
+     </table>
+    </div>
     </pre>
     </div>
     </footer>
@@ -147,10 +180,15 @@ document.getElementById("Security").style.display = "none";
 document.getElementById("Boot").style.display = "none";
 document.getElementById("Exit").style.display = "block";
 }
+
+
+function updateDateTime() {
 var date = new Date();
 var n = date.toDateString();
 var time = date.toLocaleTimeString();
 document.getElementById('date').innerHTML = n;
-document.getElementById('time').innerHTML = time;
+ document.getElementById('time').innerHTML = time;
+}
+setInterval (updateDateTime, 1000)
   </script>
 </html>
