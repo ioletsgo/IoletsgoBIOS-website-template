@@ -104,6 +104,11 @@ td {
 .side + p {
     text-align:center;
 }
+.side pre {
+    padding:5%;
+    padding-top:1%;
+    white-space: pre-wrap;
+}
 :checked + span {
     color: Darkblue;
     background-color:gray;
