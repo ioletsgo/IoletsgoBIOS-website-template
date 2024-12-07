@@ -46,7 +46,12 @@ a {
 
     padding-bottom:1%;
 }
+pre {
+    white-space: pre-wrap;
+    text-wrap: wrap;
+}
 .main {
+    overflow:auto;
     float:left;
     border-style:solid;
     width:70%;
@@ -104,8 +109,6 @@ td {
 .side pre {
     padding:5%;
     padding-top:1%;
-    white-space: pre-wrap;
-    text-wrap: wrap;
 }
 :checked + span {
     color: Darkblue;
@@ -132,4 +135,37 @@ td {
 .main span:hover {
     background-color:black;
     color:white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: gray;
+  border-left: solid;
+}
+::-webkit-scrollbar-track:hover {
+    background: darkblue;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkblue;
+  border-left: solid;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+::-webkit-scrollbar-button {
+    background: darkcyan;
+    border-left: solid;
+    height:11px;
+    width:11px;
+}
+::-webkit-scrollbar-button:hover {
+    background: white;
 }

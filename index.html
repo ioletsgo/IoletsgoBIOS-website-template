@@ -121,13 +121,13 @@ may cause your system to malfunction.</center></pre>
     <td style="padding-left:8%;">Numlock:</td>
     <td><span>[Auto]</span></td>
 </table>
-  <pre>
-   ▶ Peripheral Configuration
-   ▶ IDE Configuration
-   ▶ Diskette Configuration
-   ▶ DMI Event Logging
-   ▶ Video Configuration
-   ▶ Resource Configuration </pre>
+  <p style="color:darkblue;padding-left:3.5%;line-height:2;">
+   ▶ Peripheral Configuration <br>
+   ▶ IDE Configuration <br>
+   ▶ Diskette Configuration <br>
+   ▶ DMI Event Logging <br>
+   ▶ Video Configuration <br>
+   ▶ Resource Configuration</p>
     </div>
     <div class="side" style="margin-top:3%">
 <p><center>Item Specific Help</center></p>
@@ -143,6 +143,7 @@ If you are interested in contributing, or using it as a template for a personal 
 <!--     Security Section   -->
 <div style="padding-top:-3%;position:absolute;top:200%;" id="Security">
   <div class="main">
+
     </div>
 <div class="side">
 <p><center>Item Specific Help</center></p>
@@ -218,18 +219,42 @@ If you are interested in contributing, or using it as a template for a personal 
   </body>
 
   <script>
+setInterval (updateDateTime, 1000)
+setInterval (updatewindowheight, 50)
+// setInterval (updatewindowheightcomp, 20)
+
 function updateDateTime() {
-var date = new Date();
-var n = date.toDateString();
-var time = date.toLocaleTimeString();
+let date = new Date();
+let n = date.toDateString();
+let time = date.toLocaleTimeString();
 document.getElementById('date').innerHTML = n;
  document.getElementById('time').innerHTML = time;
 }
-setInterval (updateDateTime, 1000)
 
-if (window.location.hash != null && window.location.hash != "") {
-  var tabName = window.location.hash.substr(1);
+
+if (window.location.hash != null && window.location.hash != "#Main") {
+  let tabName = window.location.hash.substr(1);
   document.querySelector("input#"+tabName.toLowerCase()).checked = true;
 }
+
+function updatewindowheight() {
+if (window.location.hash != null && window.location.hash != "#Main") {
+window.location.assign(window.location.hash)
+console.log("updating")
+}}
+
+// const SinnerHeight = window.innerHeight;
+// const SdevicePixelRatio = window.devicePixelRatio;
+//
+// function updatewindowheight() {
+// let innerHeight = window.innerHeight;
+// let devicePixelRatio = window.devicePixelRatio;
+// if ((innerHeight != SinnerHeight) || (devicePixelRatio != SdevicePixelRatio)) {
+//   if (window.location.hash != null && window.location.hash != "#Main") {
+//   console.log("false")
+//   window.location.assign(window.location.hash)}
+//
+// }}
+
   </script>
 </html>
