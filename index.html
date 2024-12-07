@@ -232,28 +232,28 @@ document.getElementById('date').innerHTML = n;
 }
 
 
-if (window.location.hash != null && window.location.hash != "#Main") {
-  let tabName = window.location.hash.substr(1);
-  document.querySelector("input#"+tabName.toLowerCase()).checked = true;
-}
+ if (window.location.hash != null && window.location.hash != "") {
+   var tabName = window.location.hash.substr(1);
+   document.querySelector("input#"+tabName.toLowerCase()).checked = true;
+ }
+
+// function updatewindowheight() {
+// if (window.location.hash != null && window.location.hash != "") {
+// window.location.assign(window.location.hash)
+// }}
+
+const SinnerHeight = window.innerHeight;
+const SdevicePixelRatio = window.devicePixelRatio;
 
 function updatewindowheight() {
-if (window.location.hash != null && window.location.hash != "#Main") {
-window.location.assign(window.location.hash)
-}}
+let innerHeight = window.innerHeight;
+let devicePixelRatio = window.devicePixelRatio;
+if ((innerHeight != SinnerHeight) || (devicePixelRatio != SdevicePixelRatio)) {
+  if (window.location.hash != null && window.location.hash != "") {
+  console.log("false")
+  window.location.assign(window.location.hash)}
 
-// const SinnerHeight = window.innerHeight;
-// const SdevicePixelRatio = window.devicePixelRatio;
-//
-// function updatewindowheight() {
-// let innerHeight = window.innerHeight;
-// let devicePixelRatio = window.devicePixelRatio;
-// if ((innerHeight != SinnerHeight) || (devicePixelRatio != SdevicePixelRatio)) {
-//   if (window.location.hash != null && window.location.hash != "#Main") {
-//   console.log("false")
-//   window.location.assign(window.location.hash)}
-//
-// }}
+}}
 
   </script>
 </html>
